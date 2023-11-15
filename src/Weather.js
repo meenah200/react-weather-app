@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import { Circles } from 'react-loader-spinner';
 
 import './Weather.css';
 
@@ -77,6 +78,16 @@ export default function Weather(props){
   let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(handleSubmit);
 
-  return "Loading.....";
+  return (
+    <Circles
+  height="80"
+  width="80"
+  color="#4fa94d"
+  ariaLabel="circles-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+/>
+  );
 }
 }
