@@ -1,20 +1,20 @@
 import React, {useState} from "react";
 import axios from "axios";
 import { Circles } from 'react-loader-spinner';
-
+import FormatDate from "./FormatDate";
 import './Weather.css';
 
 export default function Weather(props){
   const[weatherData, setWeatherData] = useState({loaded: false});
   
   function handleSubmit(response){
-    console.log(response.data);
+    console.log(response.data.time)
     setWeatherData ({
       loaded:true,
       temperature: response.data.temperature.current,
       city: response.data.city,
       feels_like: response.data.temperature.feels_like,
-      date: "Wednesday 03:03",
+      date: new Date(response.data.time * 1000),
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed, 
       description: response.data.condition.description,
@@ -44,8 +44,9 @@ export default function Weather(props){
       </form>
       <h1>{weatherData.city}</h1>
       <ul>
-        <li>Last updated: </li>
-        <li>{weatherData.date} </li>
+        <li>
+            <FormatDate date ={weatherData.date} />      
+          </li>
         <li className="text-capitalize">{weatherData.description}</li>
       </ul>
       <br />
