@@ -20,9 +20,9 @@ if (hours < 10){
 
 let minutes = props.date.getMinutes();
 if (minutes < 10){
-    minutes = `0${hours}`;
+    minutes = `${hours}`;
   }
-  
+
   return (
 <div>
   {day} {hours}:{minutes}
