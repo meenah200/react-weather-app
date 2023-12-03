@@ -18,7 +18,8 @@ export default function Weather(props){
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed, 
       description: response.data.condition.description,
-     iconUrl:`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+      icon: response.data.condition.icon,
+      //iconUrl:`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
     });
   }
 
@@ -26,7 +27,6 @@ export default function Weather(props){
   const apiKey ="4f67eab3tc66470aeo7b6631bb16f543";
   let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(handleResponse);
-
     }
 
   function handleSubmit(event){
