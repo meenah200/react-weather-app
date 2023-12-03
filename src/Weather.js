@@ -9,7 +9,7 @@ export default function Weather(props){
   const[weatherData, setWeatherData] = useState({loaded: false});
   
   function handleResponse(response){
-    console.log(response.data.time)
+    console.log(response.data.condition.icon_url)
     setWeatherData ({
       loaded:true,
       temperature: response.data.temperature.current,
@@ -18,7 +18,7 @@ export default function Weather(props){
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed, 
       description: response.data.condition.description,
-     iconUrl:`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+     iconUrl:`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
     });
   }
 
