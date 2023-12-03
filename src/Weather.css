@@ -31,7 +31,7 @@ list-style: none;
 
 .Weather .temperature{
 color: rgb(32, 33, 36);
-font-size :60px;
+font-size :50px;
 font-weight: bold;
 line-height: 64px;
 display: inline-block;
@@ -48,6 +48,10 @@ display: inline-block;
   font-size: 16px;
   color: rgb(32, 33, 36);
   position: relative;
-  top: -30px;
+  top: -25px;
   line-height: 1px;
 }
+
+ a {
+   text-decoration: none;
+ }
