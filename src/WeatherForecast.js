@@ -13,13 +13,18 @@ function sendResponse (response) {
 }
 
 if (loaded) {
-  console.log(forecast);
    return (
     <div className ="WeatherForecast">
     <div className ="row mt-4">
-      <div className ="col">
-       <WeatherForecastDay info ={forecast[0]} />
+      {forecast.map(function (dailyForecast, index) {
+        if (index < 5) {
+          return (
+            <div className ="col" key={index}>
+            <WeatherForecastDay info ={dailyForecast} />
       </div>
+          );
+        }
+      })}
     </div>
   </div>
   );
