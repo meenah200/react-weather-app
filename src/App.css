@@ -4,12 +4,13 @@
 
 }
 
-.App footer{
-  font-size: 12px;
+.App footer {
+  font-size: 13px;
   margin: 10px;
 }
 
-a {
+.App a {
+  color: #0D6EFD;
   text-decoration: none;
 }
 

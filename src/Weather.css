@@ -12,12 +12,11 @@ background: #ffffff;
 }
     
  .Weather h1 {
- font-size: 28px;
+ font-size: 30px;
 font-weight: bold;
- margin: 20px 0 0 0;
+ margin: 20px 0 10px 0;
 line-height: 29px;
-color:rgb(9, 9, 9);
-opacity: 0.7;
+color:rgb(9, 9, 9, 0.7);
 }
     
 .Weather ul {
@@ -27,15 +26,19 @@ opacity: 0.7;
     
 .Weather li {
 font-size: 16px;
-font-weight: 100;
+font-weight: 400;
 line-height: 19px;
 list-style: none;
+}
+
+.Weather li strong {
+  color: #f65282;
 }
 
 .Weather .temperature{
 color: rgb(32, 33, 36);
 font-size :50px;
-font-weight:600;
+font-weight:400;
 line-height: 64px;
 display: inline-block;
 }
